@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:overScrollMode="never"
+    android:scrollbars="none"
+    tools:context=".LoginSignup.Birthday">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <ImageButton
+            android:id="@+id/birthday_backButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:minHeight="60dp"
+            android:minWidth="60dp"
+            app:srcCompat="?attr/homeAsUpIndicator" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="185dp"
+            android:layout_gravity="start"
+            android:layout_marginLeft="60dp"
+            android:lines="2"
+            android:singleLine="false"
+            android:text="My \nbirthday is"
+            android:textColor="@color/black"
+            android:textSize="45sp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/month1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:ems="1"
+                android:hint="M"
+                android:inputType="numberDecimal"
+                android:maxLength="1"
+                android:textColor="@color/black"
+                android:textColorHint="#A9A9A9"
+                android:textSize="20sp"
+                android:nextFocusDown="@+id/month2"/>
+
+            <EditText
+                android:id="@+id/month2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:ems="1"
+                android:hint="M"
+                android:inputType="numberDecimal"
+                android:maxLength="1"
+                android:textColor="@color/black"
+                android:textColorHint="#A9A9A9"
+                android:textSize="20sp"
+                android:nextFocusDown="@+id/day1"/>
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="18dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="0sp"
+                android:text="/"
+                android:textColor="#A9A9A9"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/day1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:ems="1"
+                android:hint="D"
+                android:inputType="numberDecimal"
+                android:maxLength="1"
+                android:textColor="@color/black"
+                android:textColorHint="#A9A9A9"
+                android:textSize="20sp"
+                android:nextFocusDown="@+id/day2"/>
+
+            <EditText
+                android:id="@+id/day2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:ems="1"
+                android:hint="D"
+                android:inputType="numberDecimal"
+                android:maxLength="1"
+                android:textColor="@color/black"
+                android:textColorHint="#A9A9A9"
+                android:textSize="20sp"
+                android:nextFocusDown="@+id/year1"/>
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="18dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:maxLength="1"
+                android:text="/"
+                android:textColor="#A9A9A9"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/year1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:ems="1"
+                android:hint="Y"
+                android:inputType="numberDecimal"
+                android:maxLength="1"
+                android:textColor="@color/black"
+                android:textColorHint="#A9A9A9"
+                android:textSize="20sp"
+                android:nextFocusDown="@+id/year2"/>
+
+            <EditText
+                android:id="@+id/year2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:ems="1"
+                android:hint="Y"
+                android:inputType="numberDecimal"
+                android:maxLength="1"
+                android:textColor="@color/black"
+                android:textColorHint="#A9A9A9"
+                android:textSize="20sp"
+                android:nextFocusDown="@+id/year3"/>
+
+            <EditText
+                android:id="@+id/year3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:ems="1"
+                android:hint="Y"
+                android:inputType="numberDecimal"
+                android:maxLength="1"
+                android:textColor="@color/black"
+                android:textColorHint="#A9A9A9"
+                android:textSize="20sp"
+                android:nextFocusDown="@+id/year4"/>
+
+            <EditText
+                android:id="@+id/year4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:ems="1"
+                android:hint="Y"
+                android:inputType="numberDecimal"
+                android:maxLength="1"
+                android:textColor="@color/black"
+                android:textColorHint="#A9A9A9"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+
+        <Button
+            android:layout_marginTop="30dp"
+            android:id="@+id/birthday_nextButtton"
+            android:layout_width="253dp"
+            android:layout_height="wrap_content"
+            android:text="Continue"
+            android:textSize="20sp"/>
+
+    </LinearLayout>
+
+</ScrollView>

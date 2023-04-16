@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:overScrollMode="never"
+    android:scrollbars="none"
+    tools:context=".LoginSignup.Sex">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <ImageButton
+            android:id="@+id/sex_backButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:minHeight="60dp"
+            android:minWidth="60dp"
+            app:srcCompat="?attr/homeAsUpIndicator" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:layout_gravity="start"
+            android:layout_marginLeft="60dp"
+            android:lines="2"
+            android:singleLine="false"
+            android:text="I am a"
+            android:textColor="@color/black"
+            android:textSize="45sp" />
+
+        <Button
+            android:background="@drawable/button_background"
+            android:id="@+id/woman"
+            android:layout_width="253dp"
+            android:layout_height="wrap_content"
+            android:text="Woman"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/man"
+            android:layout_width="253dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Man"
+            android:textSize="20sp" />
+
+        <Button
+            android:layout_marginTop="10dp"
+            android:id="@+id/other_sex"
+            android:layout_width="253dp"
+            android:layout_height="wrap_content"
+            android:text="Other"
+            android:textSize="20sp"/>
+
+        <Button
+            android:layout_marginTop="200dp"
+            android:id="@+id/sex_nextButton"
+            android:layout_width="253dp"
+            android:layout_height="wrap_content"
+            android:text="Continue"
+            android:textSize="20sp" />
+
+
+    </LinearLayout>
+
+</ScrollView>

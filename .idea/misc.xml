@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/Dominik/AndroidStudioProjects/MyApplication/app/src/main/res/drawable/a.xml" value="0.18518518518518517" />
+        <entry key="..\:/Users/Dominik/AndroidStudioProjects/MyApplication/app/src/main/res/drawable/b.xml" value="0.18518518518518517" />
+        <entry key="..\:/Users/Dominik/AndroidStudioProjects/MyApplication/app/src/main/res/drawable/button_background.xml" value="0.18518518518518517" />
+        <entry key="..\:/Users/Dominik/AndroidStudioProjects/MyApplication/app/src/main/res/drawable/buttonbackgroud.xml" value="0.18518518518518517" />
+        <entry key="..\:/Users/Dominik/AndroidStudioProjects/MyApplication/app/src/main/res/drawable/malefemalefocus.xml" value="0.18518518518518517" />
+        <entry key="..\:/Users/Dominik/AndroidStudioProjects/MyApplication/app/src/main/res/layout-w1240dp/activity_login.xml" value="0.1817269076305221" />
+        <entry key="..\:/Users/Dominik/AndroidStudioProjects/MyApplication/app/src/main/res/layout-w936dp/activity_login.xml" value="0.212109375" />
+        <entry key="..\:/Users/Dominik/AndroidStudioProjects/MyApplication/app/src/main/res/layout/activity_activity_details.xml" value="0.22" />
+        <entry key="..\:/Users/Dominik/AndroidStudioProjects/MyApplication/app/src/main/res/layout/activity_add_photo.xml" value="0.33" />
+        <entry key="..\:/Users/Dominik/AndroidStudioProjects/MyApplication/app/src/main/res/layout/activity_birthday.xml" value="0.25" />
+        <entry key="..\:/Users/Dominik/AndroidStudioProjects/MyApplication/app/src/main/res/layout/activity_details.xml" value="0.33" />
+        <entry key="..\:/Users/Dominik/AndroidStudioProjects/MyApplication/app/src/main/res/layout/activity_home.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Dominik/AndroidStudioProjects/MyApplication/app/src/main/res/layout/activity_login.xml" value="0.2828125" />
+        <entry key="..\:/Users/Dominik/AndroidStudioProjects/MyApplication/app/src/main/res/layout/activity_main.xml" value="0.2957427536231884" />
+        <entry key="..\:/Users/Dominik/AndroidStudioProjects/MyApplication/app/src/main/res/layout/activity_main_page.xml" value="0.27395833333333336" />
+        <entry key="..\:/Users/Dominik/AndroidStudioProjects/MyApplication/app/src/main/res/layout/activity_name.xml" value="0.25" />
+        <entry key="..\:/Users/Dominik/AndroidStudioProjects/MyApplication/app/src/main/res/layout/activity_phone_number.xml" value="0.25" />
+        <entry key="..\:/Users/Dominik/AndroidStudioProjects/MyApplication/app/src/main/res/layout/activity_phone_verification.xml" value="0.2" />
+        <entry key="..\:/Users/Dominik/AndroidStudioProjects/MyApplication/app/src/main/res/layout/activity_searching.xml" value="0.25" />
+        <entry key="..\:/Users/Dominik/AndroidStudioProjects/MyApplication/app/src/main/res/layout/activity_sex.xml" value="0.25" />
+        <entry key="..\:/Users/Dominik/AndroidStudioProjects/MyApplication/app/src/main/res/layout/activity_specify_details.xml" value="0.32916666666666666" />
+        <entry key="..\:/Users/Dominik/AndroidStudioProjects/MyApplication/app/src/main/res/layout/activity_sports_menu.xml" value="0.33" />
+        <entry key="..\:/Users/Dominik/AndroidStudioProjects/MyApplication/app/src/main/res/layout/activity_star_up_screen.xml" value="0.365036231884058" />
+        <entry key="..\:/Users/Dominik/AndroidStudioProjects/MyApplication/app/src/main/res/layout/activity_test.xml" value="0.31197916666666664" />
+        <entry key="..\:/Users/Dominik/AndroidStudioProjects/MyApplication/app/src/main/res/layout/cardview_item.xml" value="0.33" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

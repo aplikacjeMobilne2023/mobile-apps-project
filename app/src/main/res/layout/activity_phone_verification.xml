@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:overScrollMode="never"
+    android:scrollbars="none"
+    tools:context=".LoginSignup.PhoneVerification">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <ImageButton
+            android:id="@+id/backButton2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_marginTop="16dp"
+            android:layout_marginLeft="16dp"
+            android:minHeight="48dp"
+            app:srcCompat="?attr/homeAsUpIndicator" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/digit1"
+                android:layout_width="40dp"
+                android:layout_height="45dp"
+                android:layout_marginStart="4dp"
+                android:gravity="center"
+                android:imeOptions="actionNext"
+                android:importantForAutofill="no"
+                android:maxLength="1"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                tools:ignore="LabelFor"
+                android:ems="10"
+                android:inputType="numberDecimal"
+                android:nextFocusDown="@+id/digit2"/>
+
+            <EditText
+                android:id="@+id/digit2"
+                android:layout_width="40dp"
+                android:layout_height="45dp"
+                android:layout_marginStart="4dp"
+                android:gravity="center"
+                android:imeOptions="actionNext"
+                android:importantForAutofill="no"
+                android:maxLength="1"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                tools:ignore="LabelFor"
+                android:ems="10"
+                android:inputType="numberDecimal"
+                android:nextFocusDown="@+id/digit3"/>
+
+            <EditText
+                android:id="@+id/digit3"
+                android:layout_width="40dp"
+                android:layout_height="45dp"
+                android:layout_marginStart="4dp"
+                android:gravity="center"
+                android:imeOptions="actionNext"
+                android:importantForAutofill="no"
+                android:maxLength="1"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                tools:ignore="LabelFor"
+                android:ems="10"
+                android:inputType="numberDecimal"
+                android:nextFocusDown="@+id/digit4"/>
+
+            <EditText
+                android:id="@+id/digit4"
+                android:layout_width="40dp"
+                android:layout_height="45dp"
+                android:layout_marginStart="4dp"
+                android:gravity="center"
+                android:imeOptions="actionNext"
+                android:importantForAutofill="no"
+                android:maxLength="1"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                tools:ignore="LabelFor"
+                android:ems="10"
+                android:inputType="numberDecimal"
+                android:nextFocusDown="@+id/digit5"/>
+
+            <EditText
+                android:id="@+id/digit5"
+                android:layout_width="40dp"
+                android:layout_height="45dp"
+                android:layout_marginStart="4dp"
+                android:gravity="center"
+                android:imeOptions="actionNext"
+                android:importantForAutofill="no"
+                android:maxLength="1"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                tools:ignore="LabelFor"
+                android:ems="10"
+                android:inputType="numberDecimal"
+                android:nextFocusDown="@+id/digit6"/>
+
+            <EditText
+                android:id="@+id/digit6"
+                android:layout_width="40dp"
+                android:layout_height="45dp"
+                android:layout_marginStart="4dp"
+                android:gravity="center"
+                android:imeOptions="actionNext"
+                android:importantForAutofill="no"
+                android:maxLength="1"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                tools:ignore="LabelFor"
+                android:ems="10"
+                android:inputType="numberDecimal" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/check_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintVertical_bias="0.193" />
+
+    </LinearLayout>
+
+
+</ScrollView>
