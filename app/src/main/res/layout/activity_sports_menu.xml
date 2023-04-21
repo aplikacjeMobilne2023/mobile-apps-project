@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:overScrollMode="never"
     android:scrollbars="none"
-    tools:context=".Main.SportsMenu">
+    tools:context=".main.SportsMenu">
 
     <LinearLayout
         android:layout_width="match_parent"

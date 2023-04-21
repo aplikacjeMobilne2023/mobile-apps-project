@@ -8,7 +8,7 @@
     app:ccp_showFullName="false"
     app:ccp_showPhoneCode="false"
     app:ccp_showNameCode="false"
-    tools:context=".LoginSignup.PhoneNumber">
+    tools:context=".loginSignup.PhoneNumber">
 
     <TextView
         android:id="@+id/textView"

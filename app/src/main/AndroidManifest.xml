@@ -17,43 +17,43 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
         <activity
-            android:name=".LoginSignup.Sex"
+            android:name=".loginSignup.Sex"
             android:exported="true" />
         <activity
-            android:name=".Main.Activity_Details"
+            android:name=".main.ActivityDetails"
             android:exported="true" />
         <activity
-            android:name=".Main.SpecifyDetails"
+            android:name=".main.SpecifyDetails"
             android:exported="true" />
         <activity
-            android:name=".Main.Searching"
+            android:name=".main.Searching"
             android:exported="true" />
         <activity
-            android:name=".LoginSignup.Birthday"
+            android:name=".loginSignup.Birthday"
             android:exported="true" />
         <activity
-            android:name=".LoginSignup.Name"
+            android:name=".loginSignup.Name"
             android:exported="true" />
         <activity
-            android:name=".Main.SportsMenu"
+            android:name=".main.SportsMenu"
             android:exported="true" />
         <activity
             android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
             android:theme="@style/Base.Theme.AppCompat" />
         <activity
-            android:name=".LoginSignup.AddPhoto"
+            android:name=".loginSignup.AddPhoto"
             android:exported="true" />
         <activity
-            android:name=".Main.Home"
+            android:name=".main.Home"
             android:exported="true" />
         <activity
-            android:name=".LoginSignup.PhoneVerification"
+            android:name=".loginSignup.PhoneVerification"
             android:exported="true" />
         <activity
-            android:name=".LoginSignup.PhoneNumber"
+            android:name=".loginSignup.PhoneNumber"
             android:exported="true" />
         <activity
-            android:name=".LoginSignup.StarUpScreen"
+            android:name=".loginSignup.StartUpScreen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
