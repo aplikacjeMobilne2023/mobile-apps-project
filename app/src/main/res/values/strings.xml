@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Activity</string>
+    <string name="goToPhoneNumber">LOG IN WITH PHONE NUMBER</string>
+    <string name="goToPhoneVerification">CONTINUE</string>
+    <string name="logoDescription">logo</string>
+    <string name="myNumber">My number is</string>
+    <string name="phoneNumberHint">Phone number</string>
+    <string name="backButtonDescription">Back</string>
+</resources>
