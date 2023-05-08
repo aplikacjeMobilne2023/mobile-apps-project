@@ -25,7 +25,7 @@ public class StarUpScreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
 
         if (FirebaseAuth.getInstance().getCurrentUser() != null) { //make LoadingScreenActivity where this will be
-            Intent intent = new Intent(this, Home.class); //add if(prof_picture == null) go to AddPicture
+            Intent intent = new Intent(this, Home.class); //TODO add if(prof_picture == null) go to AddPicture
             startActivity(intent);
         }
 

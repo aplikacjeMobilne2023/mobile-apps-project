@@ -35,7 +35,7 @@ public class Home extends AppCompatActivity {
         setContentView(R.layout.activity_home);
         getSupportActionBar().hide();
 
-        /*FirebaseAuth mAuth = FirebaseAuth.getInstance();
+        FirebaseAuth mAuth = FirebaseAuth.getInstance();
         profileImageView = findViewById(R.id.go_to_profile);
         StorageReference storageProfilePicRef = FirebaseStorage.getInstance().getReference().child("Profile Pic");
 
@@ -62,24 +62,24 @@ public class Home extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(), SportsMenu.class);
                 startActivity(intent);
             }
-        });*/
+        });
 
-        DatabaseReference rootRef = FirebaseDatabase.getInstance("https://activity-1f1ae-default-rtdb.europe-west1.firebasedatabase.app").getReference();
-        DatabaseReference uidRef = rootRef.child("Activity").child("another");
-        ValueEventListener valueEventListener = new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                for (DataSnapshot child : dataSnapshot.getChildren()) {
-                    Toast.makeText(Home.this, child.getValue().toString(), Toast.LENGTH_SHORT).show();
-                    System.out.println(child.getValue());
-                }
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-                System.out.println(databaseError.getMessage());
-            }
-        };
-        uidRef.addValueEventListener(valueEventListener);
+//        DatabaseReference rootRef = FirebaseDatabase.getInstance("https://activity-1f1ae-default-rtdb.europe-west1.firebasedatabase.app").getReference();
+//        DatabaseReference uidRef = rootRef.child("Activity").child("another");
+//        ValueEventListener valueEventListener = new ValueEventListener() {
+//            @Override
+//            public void onDataChange(DataSnapshot dataSnapshot) {
+//                for (DataSnapshot child : dataSnapshot.getChildren()) {
+//                    Toast.makeText(Home.this, child.getValue().toString(), Toast.LENGTH_SHORT).show();
+//                    System.out.println(child.getValue());
+//                }
+//            }
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError databaseError) {
+//                System.out.println(databaseError.getMessage());
+//            }
+//        };
+//        uidRef.addValueEventListener(valueEventListener);
     }
 }
