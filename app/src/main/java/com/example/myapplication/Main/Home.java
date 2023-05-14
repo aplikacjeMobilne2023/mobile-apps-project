@@ -42,12 +42,12 @@ public class Home extends AppCompatActivity {
         ImageButton sports = findViewById(R.id.sports);
 
         final StorageReference fileRef = storageProfilePicRef
-                .child(mAuth.getCurrentUser().getUid()+".jpg");
+                .child(mAuth.getCurrentUser().getUid() + ".jpg");
 
-        fileRef.getBytes(1024*1024).addOnSuccessListener(new OnSuccessListener<byte[]>() {
+        fileRef.getBytes(1024 * 1024).addOnSuccessListener(new OnSuccessListener<byte[]>() {
             @Override
             public void onSuccess(byte[] bytes) {
-                Bitmap bitmap = BitmapFactory.decodeByteArray(bytes,0,bytes.length);
+                Bitmap bitmap = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
                 profileImageView.setImageBitmap(bitmap);
             }
         }).addOnFailureListener(new OnFailureListener() {

@@ -17,6 +17,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
         <activity
+            android:name=".Main.ActivitiesActivity"
+            android:exported="false" />
+        <activity
             android:name=".LoginSignup.Sex"
             android:exported="true" />
         <activity
