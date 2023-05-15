@@ -25,15 +25,20 @@
                 android:layout_width="96dp"
                 android:layout_height="96dp" />
 
+            <TextView
+                android:id="@+id/activityCategories"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Kategorie" />
+
         </LinearLayout>
 
 
-        <ImageButton
-            android:id="@+id/sports"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            app:srcCompat="@drawable/run" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/activitiesRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
 
     </LinearLayout>
 

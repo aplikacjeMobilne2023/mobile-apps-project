@@ -47,7 +47,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 
-public class SpecifyDetails extends AppCompatActivity implements LocationListener{
+public class SpecifyDetails extends AppCompatActivity implements LocationListener {
 
     private Date birthday;
     private int diff;
@@ -77,11 +77,11 @@ public class SpecifyDetails extends AppCompatActivity implements LocationListene
         String activity = getIntent().getStringExtra("activity");
         getLocation();
 
-        if(ContextCompat.checkSelfPermission(SpecifyDetails.this, Manifest.permission.ACCESS_FINE_LOCATION)
-        != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(SpecifyDetails.this,new String[] {
+        if (ContextCompat.checkSelfPermission(SpecifyDetails.this, Manifest.permission.ACCESS_FINE_LOCATION)
+                != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(SpecifyDetails.this, new String[]{
                     Manifest.permission.ACCESS_FINE_LOCATION
-            },100);
+            }, 100);
         }
 
         FirebaseAuth mAuth = FirebaseAuth.getInstance();
@@ -100,7 +100,7 @@ public class SpecifyDetails extends AppCompatActivity implements LocationListene
                 try {
                     birthday = sdf.parse(user.getBirthday());
                 } catch (ParseException e) {
-                    Toast.makeText(getApplicationContext(), ""+e.getMessage(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "" + e.getMessage(), Toast.LENGTH_SHORT).show();
                 }
 
                 LocalDate localDate = LocalDate.now();
@@ -110,13 +110,13 @@ public class SpecifyDetails extends AppCompatActivity implements LocationListene
 
                 Calendar a = getCalendar(birthday);
                 Calendar b = getCalendar(utilDate);
-                diff = b.get(Calendar.YEAR) -a.get(Calendar.YEAR);
+                diff = b.get(Calendar.YEAR) - a.get(Calendar.YEAR);
                 if ((a.get(Calendar.MONTH) > b.get(Calendar.MONTH)) || (a.get(Calendar.MONTH) == b.get(Calendar.MONTH) && a.get(Calendar.DAY_OF_MONTH) > b.get(Calendar.DAY_OF_MONTH))) {
                     diff--;
                 }
 
-                String dateString  = b.get(Calendar.DAY_OF_MONTH) +"-"+b.get(Calendar.MONTH)+"-"+b.get(Calendar.YEAR);
-                newActivity = new Activity(activity,user.getName(),diff,"v4HL4Gnm7pXX4GfK8m5F1sjTHgU2",text.getText().toString(),user.getImage(),dateString, latitude,longitude,user.getSex());
+                String dateString = b.get(Calendar.DAY_OF_MONTH) + "-" + b.get(Calendar.MONTH) + "-" + b.get(Calendar.YEAR);
+                newActivity = new Activity(activity, user.getName(), diff, "v4HL4Gnm7pXX4GfK8m5F1sjTHgU2", text.getText().toString(), user.getImage(), dateString, latitude, longitude, user.getSex(), "https://firebasestorage.googleapis.com/v0/b/activity-1f1ae.appspot.com/o/Activities%2Fjogging.webp?alt=media&token=789e584a-4f11-4897-bd5d-a59cacaac3d8");
             }
 
             @Override
@@ -157,8 +157,8 @@ public class SpecifyDetails extends AppCompatActivity implements LocationListene
                         Toast.makeText(getApplicationContext(), "Record is inserted", Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(getApplicationContext(), Searching.class);
                         intent.putExtra("activity", activity);
-                        intent.putExtra("latitude",latitude);
-                        intent.putExtra("longitude",longitude);
+                        intent.putExtra("latitude", latitude);
+                        intent.putExtra("longitude", longitude);
                         startActivity(intent);
                     }
                 });
@@ -177,9 +177,8 @@ public class SpecifyDetails extends AppCompatActivity implements LocationListene
 
         try {
             locationManager = (LocationManager) getApplicationContext().getSystemService(LOCATION_SERVICE);
-            locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER,5000,5,this);
-        }
-        catch (Exception e) {
+            locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 5000, 5, this);
+        } catch (Exception e) {
             e.printStackTrace();
         }
 

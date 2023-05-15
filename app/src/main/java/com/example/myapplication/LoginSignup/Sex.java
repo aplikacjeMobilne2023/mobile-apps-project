@@ -22,7 +22,7 @@ import java.util.HashMap;
 public class Sex extends AppCompatActivity {
 
     private enum sex {
-        MAN,WOMAN,OTHER
+        MAN, WOMAN, OTHER
     }
 
     sex chosenSex;
@@ -45,7 +45,6 @@ public class Sex extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
 
 
         manButton.setOnClickListener(new View.OnClickListener() {
@@ -75,10 +74,10 @@ public class Sex extends AppCompatActivity {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                HashMap<String,Object> hashMap = new HashMap<>();
+                HashMap<String, Object> hashMap = new HashMap<>();
                 hashMap.put("sex", chosenSex.toString());
 
-                dao.update(mAuth.getCurrentUser().getUid(),hashMap).addOnSuccessListener(new OnSuccessListener<Void>() {
+                dao.update(mAuth.getCurrentUser().getUid(), hashMap).addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void unused) {
                         Toast.makeText(getApplicationContext(), "Record is inserted", Toast.LENGTH_SHORT).show();
@@ -88,13 +87,11 @@ public class Sex extends AppCompatActivity {
                 }).addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(getApplicationContext(), ""+e.getMessage(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "" + e.getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 });
             }
         });
-
-
 
 
     }

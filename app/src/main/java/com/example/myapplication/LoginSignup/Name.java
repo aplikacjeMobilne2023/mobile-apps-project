@@ -37,10 +37,10 @@ public class Name extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                HashMap<String,Object> hashMap = new HashMap<>();
+                HashMap<String, Object> hashMap = new HashMap<>();
                 hashMap.put("name", edit_name.getText().toString());
 
-                dao.update(mAuth.getCurrentUser().getUid(),hashMap).addOnSuccessListener(new OnSuccessListener<Void>() {
+                dao.update(mAuth.getCurrentUser().getUid(), hashMap).addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void unused) {
                         Toast.makeText(getApplicationContext(), "Record is inserted", Toast.LENGTH_SHORT).show();
@@ -50,7 +50,7 @@ public class Name extends AppCompatActivity {
                 }).addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(getApplicationContext(), ""+e.getMessage(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "" + e.getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 });
             }
