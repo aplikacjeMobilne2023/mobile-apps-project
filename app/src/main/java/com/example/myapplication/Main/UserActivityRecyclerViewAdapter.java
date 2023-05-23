@@ -16,13 +16,13 @@ import com.example.myapplication.R;
 
 import java.util.List;
 
-public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.MyViewHolder> {
+public class UserActivityRecyclerViewAdapter extends RecyclerView.Adapter<UserActivityRecyclerViewAdapter.MyViewHolder> {
 
     private Context mContext ;
     private List<Activity> mData ;
 
 
-    public RecyclerViewAdapter(Context mContext, List<Activity> mData) {
+    public UserActivityRecyclerViewAdapter(Context mContext, List<Activity> mData) {
         this.mContext = mContext;
         this.mData = mData;
     }
@@ -41,7 +41,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
         holder.age.setText(String.valueOf(mData.get(position).getAge()));
         holder.name.setText(mData.get(position).getName());
-        holder.profile_picture.setImageResource(mData.get(position).getThumbnail());
+//        holder.profile_picture.setImageResource(mData.get(position).getThumbnail());
+        holder.profile_picture.setImageBitmap(mData.get(position).getUserPhoto());
         holder.distance.setText(String.valueOf(mData.get(position).getDistance())+" km");
         if (mData.get(position).getDaysTo() == 0.0) {
             holder.daysTo.setText("Today");
@@ -63,7 +64,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                 intent.putExtra("name",mData.get(position).getName());
                 intent.putExtra("age", mData.get(position).getAge());
                 intent.putExtra("activity",mData.get(position).getActivity());
-                intent.putExtra("image",mData.get(position).getThumbnail());
+                intent.putExtra("image",mData.get(position).getUserPhoto());
                 intent.putExtra("distance",mData.get(position).getDistance());
                 intent.putExtra("daysTo",mData.get(position).getDaysTo());
                 // start the activity

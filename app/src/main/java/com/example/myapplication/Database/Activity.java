@@ -1,5 +1,7 @@
 package com.example.myapplication.Database;
 
+import android.graphics.Bitmap;
+
 public class Activity {
     private String activity;
     private String name;
@@ -14,6 +16,8 @@ public class Activity {
     private double distance;
     private long daysTo;
 
+    private Bitmap userPhoto;
+
     public Activity(){}
 
     public Activity(String activity, String name, int age, String userId, String text, int thumbnail, String date, double latitude, double longitude, String sex) {
@@ -27,6 +31,14 @@ public class Activity {
         this.latitude = latitude;
         this.longitude = longitude;
         this.sex = sex;
+    }
+
+    public Bitmap getUserPhoto() {
+        return userPhoto;
+    }
+
+    public void setUserPhoto(Bitmap userPhoto) {
+        this.userPhoto = userPhoto;
     }
 
     public long getDaysTo() {
