@@ -4,9 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Main.Searching"
+    tools:context=".Main.ActivityWillingUsers"
     android:padding="8dp"
     android:orientation="vertical">
+
+    <ImageButton
+        android:id="@+id/searching_backButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="16dp"
+        android:minHeight="48dp"
+        app:srcCompat="?attr/homeAsUpIndicator" />
 
 
     <androidx.recyclerview.widget.RecyclerView

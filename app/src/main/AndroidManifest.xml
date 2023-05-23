@@ -26,7 +26,7 @@
             android:name=".Main.SpecifyDetails"
             android:exported="true" />
         <activity
-            android:name=".Main.Searching"
+            android:name=".Main.ActivityWillingUsers"
             android:exported="true" />
         <activity
             android:name=".LoginSignup.Birthday"
