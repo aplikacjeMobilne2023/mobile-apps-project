@@ -1,6 +1,7 @@
 package com.example.myapplication.Main;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -34,7 +35,7 @@ public class Activity_Details extends AppCompatActivity {
         String nameString = intent.getExtras().getString("name");
         String ageString = String.valueOf(intent.getExtras().getInt("age"));
         String Description = intent.getExtras().getString("text");
-        int image = intent.getExtras().getInt("image") ;
+        Bitmap image = intent.getExtras().getParcelable("image") ; //TODO might be better to pass URL and create Bitmap
         //double distanceDouble = intent.getExtras().getDouble("distance");
         //long daysToLong = intent.getExtras().getLong("daysTo");
 
@@ -43,7 +44,7 @@ public class Activity_Details extends AppCompatActivity {
         name.setText(nameString);
         age.setText(ageString);
         description.setText(Description);
-        img.setImageResource(image);
+        img.setImageBitmap(image);
         //distance.setText(String.valueOf(distanceDouble));
         //daysTo.setText("String.valueOf(daysToLong)");
 
