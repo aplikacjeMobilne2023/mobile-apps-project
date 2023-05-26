@@ -2,26 +2,20 @@ package com.example.myapplication.Main;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
-import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import com.example.myapplication.R;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
@@ -39,15 +33,13 @@ public class Home extends AppCompatActivity {
         profileImageView = findViewById(R.id.go_to_profile);
         StorageReference storageProfilePicRef = FirebaseStorage.getInstance().getReference().child("Profile Pic");
 
-        ImageButton sports = findViewById(R.id.sports);
-
         final StorageReference fileRef = storageProfilePicRef
-                .child(mAuth.getCurrentUser().getUid()+".jpg");
+                .child(mAuth.getCurrentUser().getUid() + ".jpg");
 
-        fileRef.getBytes(1024*1024).addOnSuccessListener(new OnSuccessListener<byte[]>() {
+        fileRef.getBytes(1024 * 1024).addOnSuccessListener(new OnSuccessListener<byte[]>() {
             @Override
             public void onSuccess(byte[] bytes) {
-                Bitmap bitmap = BitmapFactory.decodeByteArray(bytes,0,bytes.length);
+                Bitmap bitmap = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
                 profileImageView.setImageBitmap(bitmap);
             }
         }).addOnFailureListener(new OnFailureListener() {
@@ -56,30 +48,19 @@ public class Home extends AppCompatActivity {
             }
         });
 
-        sports.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), SportsMenu.class);
-                startActivity(intent);
-            }
-        });
+        RecyclerView activityCategoriesRecyclerView = findViewById(R.id.activitiesRecyclerView);
+        activityCategoriesRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        activityCategoriesRecyclerView.setAdapter(new ActivityCategoriesToActivityCategoryAdapter((activityCategoryKey) -> {
+            launchSportsMenuActivity(activityCategoryKey);
+            return null;
+        }));
+    }
 
-//        DatabaseReference rootRef = FirebaseDatabase.getInstance("https://activity-1f1ae-default-rtdb.europe-west1.firebasedatabase.app").getReference();
-//        DatabaseReference uidRef = rootRef.child("Activity").child("another");
-//        ValueEventListener valueEventListener = new ValueEventListener() {
-//            @Override
-//            public void onDataChange(DataSnapshot dataSnapshot) {
-//                for (DataSnapshot child : dataSnapshot.getChildren()) {
-//                    Toast.makeText(Home.this, child.getValue().toString(), Toast.LENGTH_SHORT).show();
-//                    System.out.println(child.getValue());
-//                }
-//            }
-//
-//            @Override
-//            public void onCancelled(@NonNull DatabaseError databaseError) {
-//                System.out.println(databaseError.getMessage());
-//            }
-//        };
-//        uidRef.addValueEventListener(valueEventListener);
+    public void launchSportsMenuActivity(String activityCategoryKey) {
+        Intent sportsMenuIntent = new Intent(this, SportsMenu.class);
+
+        sportsMenuIntent.putExtra("activityCategoryKey", activityCategoryKey);
+
+        startActivity(sportsMenuIntent);
     }
 }

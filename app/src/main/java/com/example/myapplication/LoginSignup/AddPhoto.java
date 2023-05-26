@@ -59,7 +59,7 @@ public class AddPhoto extends AppCompatActivity {
 
         profileImageView = findViewById(R.id.profile_image);
         saveButton = findViewById(R.id.save_button);
-        
+
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -70,7 +70,7 @@ public class AddPhoto extends AppCompatActivity {
         profileImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                CropImage.activity().setAspectRatio(1,1).start(AddPhoto.this);
+                CropImage.activity().setAspectRatio(1, 1).start(AddPhoto.this);
             }
         });
 
@@ -82,8 +82,8 @@ public class AddPhoto extends AppCompatActivity {
         databaseReference.child(mAuth.getCurrentUser().getUid()).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if (snapshot.exists() && snapshot.getChildrenCount() > 0 ) {
-                    if (snapshot.hasChild("image")){
+                if (snapshot.exists() && snapshot.getChildrenCount() > 0) {
+                    if (snapshot.hasChild("image")) {
                         String image = snapshot.child("image").getValue().toString();
                         Picasso.get().load(image).into(profileImageView);
                     }
@@ -101,14 +101,13 @@ public class AddPhoto extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if(requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE && resultCode == RESULT_OK && data != null) {
+        if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE && resultCode == RESULT_OK && data != null) {
             CropImage.ActivityResult result = CropImage.getActivityResult(data);
             imageUri = result.getUri();
 
             profileImageView.setImageURI(imageUri);
 
-        }
-        else {
+        } else {
             Toast.makeText(this, "Error, Try Again", Toast.LENGTH_SHORT).show();
         }
     }
@@ -120,14 +119,14 @@ public class AddPhoto extends AppCompatActivity {
         progressDialog.setMessage("Please wait while we are setting your data");
         progressDialog.show();
 
-        if(imageUri != null) {
+        if (imageUri != null) {
             final StorageReference fileRef = storageProfilePicRef
-                    .child(mAuth.getCurrentUser().getUid()+".jpg");
+                    .child(mAuth.getCurrentUser().getUid() + ".jpg");
             fileRef.putFile(imageUri).addOnCompleteListener(new OnCompleteListener<UploadTask.TaskSnapshot>() {
                 @Override
                 public void onComplete(@NonNull Task<UploadTask.TaskSnapshot> task) {
                     databaseReference.child("Image").setValue(task.getResult().toString());
-                    Toast.makeText(AddPhoto.this,task.getResult().toString(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(AddPhoto.this, task.getResult().toString(), Toast.LENGTH_SHORT).show();
                     progressDialog.dismiss();
                     openNext();
                 }
@@ -160,9 +159,8 @@ public class AddPhoto extends AppCompatActivity {
                     }
                 }
             });*/
-        }
-        else {
-            Toast.makeText(this,"Image not selected", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(this, "Image not selected", Toast.LENGTH_SHORT).show();
         }
     }
 

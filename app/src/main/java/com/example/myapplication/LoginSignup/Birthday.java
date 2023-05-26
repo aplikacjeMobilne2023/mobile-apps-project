@@ -55,7 +55,7 @@ public class Birthday extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                stringBuilder.insert(0,charSequence);
+                stringBuilder.insert(0, charSequence);
                 findViewById(getCurrentFocus().getNextFocusDownId()).requestFocus();
             }
 
@@ -74,7 +74,7 @@ public class Birthday extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                stringBuilder.insert(1,charSequence);
+                stringBuilder.insert(1, charSequence);
                 findViewById(getCurrentFocus().getNextFocusDownId()).requestFocus();
             }
 
@@ -93,7 +93,7 @@ public class Birthday extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                stringBuilder.insert(2,charSequence);
+                stringBuilder.insert(2, charSequence);
                 findViewById(getCurrentFocus().getNextFocusDownId()).requestFocus();
             }
 
@@ -112,7 +112,7 @@ public class Birthday extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                stringBuilder.insert(3,charSequence);
+                stringBuilder.insert(3, charSequence);
                 findViewById(getCurrentFocus().getNextFocusDownId()).requestFocus();
             }
 
@@ -131,7 +131,7 @@ public class Birthday extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                stringBuilder.insert(4,charSequence);
+                stringBuilder.insert(4, charSequence);
                 findViewById(getCurrentFocus().getNextFocusDownId()).requestFocus();
             }
 
@@ -150,7 +150,7 @@ public class Birthday extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                stringBuilder.insert(5,charSequence);
+                stringBuilder.insert(5, charSequence);
                 findViewById(getCurrentFocus().getNextFocusDownId()).requestFocus();
             }
 
@@ -169,7 +169,7 @@ public class Birthday extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                stringBuilder.insert(6,charSequence);
+                stringBuilder.insert(6, charSequence);
                 findViewById(getCurrentFocus().getNextFocusDownId()).requestFocus();
             }
 
@@ -188,7 +188,7 @@ public class Birthday extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                stringBuilder.insert(7,charSequence);
+                stringBuilder.insert(7, charSequence);
                 getCurrentFocus().clearFocus();
             }
 
@@ -206,10 +206,10 @@ public class Birthday extends AppCompatActivity {
             public void onClick(View view) {
 
                 String dateString = stringBuilder.toString();
-                HashMap<String,Object> hashMap = new HashMap<>();
+                HashMap<String, Object> hashMap = new HashMap<>();
                 hashMap.put("birthday", dateString); // sdf.format(finalDate)
 
-                dao.update(mAuth.getCurrentUser().getUid(),hashMap).addOnSuccessListener(new OnSuccessListener<Void>() {
+                dao.update(mAuth.getCurrentUser().getUid(), hashMap).addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void unused) {
                         Toast.makeText(getApplicationContext(), "Record is inserted", Toast.LENGTH_SHORT).show();
@@ -219,7 +219,7 @@ public class Birthday extends AppCompatActivity {
                 }).addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(getApplicationContext(), ""+e.getMessage(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "" + e.getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 });
             }

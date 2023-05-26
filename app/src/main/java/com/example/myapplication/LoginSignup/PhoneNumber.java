@@ -38,7 +38,7 @@ public class PhoneNumber extends AppCompatActivity {
         ccp.setPhoneNumberValidityChangeListener(new CountryCodePicker.PhoneNumberValidityChangeListener() {
             @Override
             public void onValidityChanged(boolean isValidNumber) {
-                if(isValidNumber) {
+                if (isValidNumber) {
                     fullNumber = ccp.getFullNumberWithPlus();
                 }
                 button.setEnabled(ccp.isValidFullNumber());
