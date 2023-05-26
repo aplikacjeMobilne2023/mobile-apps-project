@@ -5,7 +5,10 @@ public class User {
     private String sex;
     private String birthday;
     private int Image;
-    public User(){}
+
+    public User() {
+    }
+
     public User(String name, String sex, String birthdate, int Image) {
         this.name = name;
         this.sex = sex;

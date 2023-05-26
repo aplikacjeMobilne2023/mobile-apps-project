@@ -13,10 +13,12 @@ public class Activity {
     private String sex;
     private double distance;
     private long daysTo;
+    private String pictureUrl;
 
-    public Activity(){}
+    public Activity() {
+    }
 
-    public Activity(String activity, String name, int age, String userId, String text, int thumbnail, String date, double latitude, double longitude, String sex) {
+    public Activity(String activity, String name, int age, String userId, String text, int thumbnail, String date, double latitude, double longitude, String sex, String pictureUrl) {
         this.activity = activity;
         this.name = name;
         this.age = age;
@@ -27,6 +29,7 @@ public class Activity {
         this.latitude = latitude;
         this.longitude = longitude;
         this.sex = sex;
+        this.pictureUrl = pictureUrl;
     }
 
     public long getDaysTo() {
@@ -53,9 +56,13 @@ public class Activity {
         this.sex = sex;
     }
 
-    public String getActivity() { return  activity; }
+    public String getActivity() {
+        return activity;
+    }
 
-    public void setActivity(String activity) { this.activity = activity; }
+    public void setActivity(String activity) {
+        this.activity = activity;
+    }
 
     public String getName() {
         return name;
@@ -123,5 +130,13 @@ public class Activity {
 
     public void setLongitude(double longitude) {
         this.longitude = longitude;
+    }
+
+    public String getPictureUrl() {
+        return pictureUrl;
+    }
+
+    public void setPictureUrl(String pictureUrl) {
+        this.pictureUrl = pictureUrl;
     }
 }

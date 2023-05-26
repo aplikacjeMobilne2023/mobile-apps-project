@@ -58,7 +58,7 @@ public class PhoneVerification extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                codeByUser.insert(0,charSequence);
+                codeByUser.insert(0, charSequence);
                 findViewById(getCurrentFocus().getNextFocusDownId()).requestFocus();
             }
 
@@ -76,7 +76,7 @@ public class PhoneVerification extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                codeByUser.insert(1,charSequence);
+                codeByUser.insert(1, charSequence);
                 findViewById(getCurrentFocus().getNextFocusDownId()).requestFocus();
             }
 
@@ -94,7 +94,7 @@ public class PhoneVerification extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                codeByUser.insert(2,charSequence);
+                codeByUser.insert(2, charSequence);
                 findViewById(getCurrentFocus().getNextFocusDownId()).requestFocus();
             }
 
@@ -112,7 +112,7 @@ public class PhoneVerification extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                codeByUser.insert(3,charSequence);
+                codeByUser.insert(3, charSequence);
                 findViewById(getCurrentFocus().getNextFocusDownId()).requestFocus();
             }
 
@@ -130,7 +130,7 @@ public class PhoneVerification extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                codeByUser.insert(4,charSequence);
+                codeByUser.insert(4, charSequence);
                 findViewById(getCurrentFocus().getNextFocusDownId()).requestFocus();
             }
 
@@ -148,7 +148,7 @@ public class PhoneVerification extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                codeByUser.insert(5,charSequence);
+                codeByUser.insert(5, charSequence);
                 digit6.clearFocus();
             }
 
@@ -164,7 +164,7 @@ public class PhoneVerification extends AppCompatActivity {
             public void onClick(View view) {
                 String code = codeByUser.toString();
 
-                if(code.isEmpty() || code.length()<6){
+                if (code.isEmpty() || code.length() < 6) {
                     Toast.makeText(PhoneVerification.this, "Wrong code", Toast.LENGTH_SHORT).show();
                     digit1.setText("");
                     digit2.setText("");
@@ -229,12 +229,11 @@ public class PhoneVerification extends AppCompatActivity {
         firebaseAuth.signInWithCredential(credential).addOnCompleteListener(PhoneVerification.this, new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
-                if(task.isSuccessful()) {
+                if (task.isSuccessful()) {
                     Intent intent = new Intent(getApplicationContext(), Name.class);
                     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                     startActivity(intent);
-                }
-                else {
+                } else {
                     Toast.makeText(PhoneVerification.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                     /*digit1.setText("");
                     digit2.setText("");

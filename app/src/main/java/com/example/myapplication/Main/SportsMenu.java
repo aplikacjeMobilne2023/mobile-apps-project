@@ -1,16 +1,19 @@
 package com.example.myapplication.Main;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 
+import com.example.myapplication.Database.Activity;
 import com.example.myapplication.R;
-import com.example.myapplication.chat.ChatActivity;
 
 public class SportsMenu extends AppCompatActivity {
+    private static final int activitiesInRow = 2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,27 +22,29 @@ public class SportsMenu extends AppCompatActivity {
         getSupportActionBar().hide();
 
         ImageButton backButton = findViewById(R.id.sportsMenu_backButton);
-        backButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), Home.class);
-                startActivity(intent);
-            }
-        });
-
-        ImageButton running = findViewById(R.id.running);
-        running.setOnClickListener(view -> {
-            Intent intent = new Intent(getApplicationContext(), SpecifyDetails.class);
-            intent.putExtra("activity", view.getResources().getResourceEntryName(view.getId()));
+        backButton.setOnClickListener(view -> {
+            Intent intent = new Intent(getApplicationContext(), Home.class);
             startActivity(intent);
         });
 
-        ImageButton football = findViewById(R.id.football);
+        String activityCategoryKey = getIntent().getStringExtra("activityCategoryKey");
 
-        football.setOnClickListener(view -> {
-            Intent intent = new Intent(getApplicationContext(), ChatActivity.class);
-            intent.putExtra("roomId", "demo_football");
-            startActivity(intent);
-        });
+        RecyclerView activitiesRecyclerView = findViewById(R.id.activitiesRecyclerView);
+        activitiesRecyclerView.setLayoutManager(new GridLayoutManager(this, activitiesInRow));
+
+        if (activityCategoryKey != null) {
+            activitiesRecyclerView.setAdapter(new ActivitiesToActivityAdapter(activityCategoryKey, (activity) -> {
+                launchSpecifyDetailsActivity(activity);
+                return null;
+            }));
+        }
+    }
+
+    public void launchSpecifyDetailsActivity(Activity activity) {
+        Intent activitiesActivityIntent = new Intent(this, SpecifyDetails.class);
+
+        activitiesActivityIntent.putExtra("activity", activity.getActivity());
+
+        startActivity(activitiesActivityIntent);
     }
 }

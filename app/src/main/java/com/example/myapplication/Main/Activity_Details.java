@@ -34,7 +34,7 @@ public class Activity_Details extends AppCompatActivity {
         String nameString = intent.getExtras().getString("name");
         String ageString = String.valueOf(intent.getExtras().getInt("age"));
         String Description = intent.getExtras().getString("text");
-        int image = intent.getExtras().getInt("image") ;
+        int image = intent.getExtras().getInt("image");
         //double distanceDouble = intent.getExtras().getDouble("distance");
         //long daysToLong = intent.getExtras().getLong("daysTo");
 

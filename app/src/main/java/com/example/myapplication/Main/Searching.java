@@ -80,7 +80,7 @@ public class Searching extends AppCompatActivity {
         String endDateFilter = "30-09-2021";
         String sexFilter = "Male";
         double latitude = getIntent().getDoubleExtra("latitude", 0);
-        double longitude = getIntent().getDoubleExtra("longitude",0);
+        double longitude = getIntent().getDoubleExtra("longitude", 0);
         Location myLocation = new Location("");
         myLocation.setLatitude(latitude);
         myLocation.setLongitude(longitude);
@@ -88,8 +88,7 @@ public class Searching extends AppCompatActivity {
         try {
             startDateFilterDate = sdf.parse(startDateFilter);
             endDateFilterDate = sdf.parse(endDateFilter);
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
 
         }
 
@@ -101,17 +100,16 @@ public class Searching extends AppCompatActivity {
                 Activity activity = dataSnapshot.getValue(Activity.class);
                 try {
                     date = sdf.parse(activity.getDate());
-                }
-                catch (Exception e) {
+                } catch (Exception e) {
                     activity.setName(e.toString());
                 }
 
                 // here check if current outdated
-                double distance = distance(myLocation.getLatitude(),myLocation.getLongitude(),activity.getLatitude(),activity.getLongitude());
+                double distance = distance(myLocation.getLatitude(), myLocation.getLongitude(), activity.getLatitude(), activity.getLongitude());
                 if (activity.getActivity().equals(activityName)
-                        && ageMinFilter<activity.getAge() && activity.getAge()<ageMaxFilter
-                        && (startDateFilterDate.before(date) ||startDateFilterDate.equals(date))
-                        && (endDateFilterDate.after(date) ||endDateFilterDate.equals(date))
+                        && ageMinFilter < activity.getAge() && activity.getAge() < ageMaxFilter
+                        && (startDateFilterDate.before(date) || startDateFilterDate.equals(date))
+                        && (endDateFilterDate.after(date) || endDateFilterDate.equals(date))
                         && (sexFilter.equals(activity.getSex()) || activity.getSex() == null)
                         && (distance < distanceFilter)
                         && (activity.getUserId() != mAuth.getCurrentUser().getUid())) {
@@ -127,11 +125,11 @@ public class Searching extends AppCompatActivity {
 
                     activity.setDaysTo(daysBetween);
 
-                    activity.setDistance(Math.round(distance/100)/10.0); //Math.round(distance/100)/10
+                    activity.setDistance(Math.round(distance / 100) / 10.0); //Math.round(distance/100)/10
                     list.add(activity);
                 }
 
-                if(sortBy == "date") {
+                if (sortBy == "date") {
                     Collections.sort(list, new Comparator<Activity>() {
                         @Override
                         public int compare(Activity a1, Activity a2) {
@@ -140,22 +138,19 @@ public class Searching extends AppCompatActivity {
                             try {
                                 d1 = sdf.parse(a1.getDate());
                                 d2 = sdf.parse(a2.getDate());
-                            }
-                            catch (Exception e) {
+                            } catch (Exception e) {
                             }
                             return d1.compareTo(d2);
                         }
                     });
-                }
-                else if(sortBy == "distance") {
+                } else if (sortBy == "distance") {
                     Collections.sort(list, new Comparator<Activity>() {
                         @Override
                         public int compare(Activity a1, Activity a2) {
-                            if (distance(myLocation.getLatitude(),myLocation.getLongitude(),a1.getLatitude(),a1.getLongitude())
-                                    > distance(myLocation.getLatitude(),myLocation.getLongitude(),a2.getLatitude(),a2.getLongitude())) {
+                            if (distance(myLocation.getLatitude(), myLocation.getLongitude(), a1.getLatitude(), a1.getLongitude())
+                                    > distance(myLocation.getLatitude(), myLocation.getLongitude(), a2.getLatitude(), a2.getLongitude())) {
                                 return 1;
-                            }
-                            else return -1;
+                            } else return -1;
                         }
                     });
                 }
@@ -185,13 +180,13 @@ public class Searching extends AppCompatActivity {
 
         RecyclerView myrv = (RecyclerView) findViewById(R.id.recyclerview_id);
         myAdapter = new RecyclerViewAdapter(this, list);
-        myrv.setLayoutManager(new GridLayoutManager(this,2));
+        myrv.setLayoutManager(new GridLayoutManager(this, 2));
         myrv.setAdapter(myAdapter);
 
     }
 
     private Location getLastKnownLocation() {
-        mLocationManager = (LocationManager)getApplicationContext().getSystemService(LOCATION_SERVICE);
+        mLocationManager = (LocationManager) getApplicationContext().getSystemService(LOCATION_SERVICE);
         List<String> providers = mLocationManager.getProviders(true);
         Location bestLocation = null;
         for (String provider : providers) {
@@ -212,7 +207,7 @@ public class Searching extends AppCompatActivity {
         double dist = Math.sin(deg2rad(lat1)) * Math.sin(deg2rad(lat2)) + Math.cos(deg2rad(lat1)) * Math.cos(deg2rad(lat2)) * Math.cos(deg2rad(theta));
         dist = Math.acos(dist);
         dist = rad2deg(dist);
-        dist = dist * 60 * 1.1515* 1.609344;
+        dist = dist * 60 * 1.1515 * 1.609344;
         return (dist);
     }
 
