@@ -2,6 +2,7 @@ package com.example.myapplication.Main;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -9,6 +10,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.myapplication.R;
+import com.example.myapplication.chat.ChatActivity;
 
 public class Activity_Details extends AppCompatActivity {
 
@@ -47,5 +49,11 @@ public class Activity_Details extends AppCompatActivity {
         //distance.setText(String.valueOf(distanceDouble));
         //daysTo.setText("String.valueOf(daysToLong)");
 
+        Button openChatButton = findViewById(R.id.openChatButton);
+        openChatButton.setOnClickListener(view -> {
+            Intent chatIntent = new Intent(getApplicationContext(), ChatActivity.class);
+            chatIntent.putExtra("roomId", nameString + ageString + Description + image);
+            startActivity(chatIntent);
+        });
     }
 }
