@@ -24,11 +24,28 @@
             android:minHeight="48dp"
             app:srcCompat="?attr/homeAsUpIndicator" />
 
+        <TextView
+            android:id="@+id/details_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:layout_marginTop="10dp"
+            android:textSize="30dp"
+            android:hint="Activity Title"/>
+
         <EditText
             android:id="@+id/details_text"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_gravity="center" />
+            android:layout_gravity="center"
+            android:hint="Activity Details"/>
+
+
+        <org.osmdroid.views.MapView
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:id="@+id/details_map"
+            />
 
         <Button
             android:layout_marginTop="30dp"
