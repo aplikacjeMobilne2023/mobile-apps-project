@@ -6,7 +6,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.ImageButton;
 
 import com.example.myapplication.Database.Activity;
@@ -33,7 +32,7 @@ public class SportsMenu extends AppCompatActivity {
         activitiesRecyclerView.setLayoutManager(new GridLayoutManager(this, activitiesInRow));
 
         if (activityCategoryKey != null) {
-            activitiesRecyclerView.setAdapter(new ActivitiesToActivityAdapter(activityCategoryKey, (activity) -> {
+            activitiesRecyclerView.setAdapter(new SubcategoriesToSubcategoryAdapter(activityCategoryKey, (activity) -> {
                 launchSpecifyDetailsActivity(activity);
                 return null;
             }));

@@ -1,7 +1,6 @@
 package com.example.myapplication.Database
 
-data class ActivityCategory(
+data class ActivitySubcategory(
     val name: String? = null,
     val pictureUrl: String? = null,
-    val subcategories: List<ActivitySubcategory> = listOf()
 )

@@ -12,7 +12,7 @@ class DAOActivityCategory {
         return database
     }
 
-    fun getActivitiesForCategory(key: String): DatabaseReference {
-        return database.child(key).child("activities")
+    fun getSubcategoriesForCategory(key: String): DatabaseReference {
+        return database.child(key).child("subcategories")
     }
 }

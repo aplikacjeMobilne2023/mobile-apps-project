@@ -76,6 +76,7 @@ public class SpecifyDetails extends AppCompatActivity implements LocationListene
     private Marker currentMarker = null;
     private double chosenLongitude;
     private double chosenLatitude;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -135,7 +136,7 @@ public class SpecifyDetails extends AppCompatActivity implements LocationListene
                 }
 
                 String dateString = b.get(Calendar.DAY_OF_MONTH) + "-" + b.get(Calendar.MONTH) + "-" + b.get(Calendar.YEAR);
-                newActivity = new Activity(activity, user.getName(), diff, "v4HL4Gnm7pXX4GfK8m5F1sjTHgU2", text.getText().toString(), user.getImage(), dateString, latitude, longitude, user.getSex(), "https://firebasestorage.googleapis.com/v0/b/activity-1f1ae.appspot.com/o/Activities%2Fjogging.webp?alt=media&token=789e584a-4f11-4897-bd5d-a59cacaac3d8");
+                newActivity = new Activity(activity, user.getName(), diff, FirebaseAuth.getInstance().getCurrentUser().getUid(), text.getText().toString(), user.getImage(), dateString, latitude, longitude, user.getSex(), "https://firebasestorage.googleapis.com/v0/b/activity-1f1ae.appspot.com/o/Activities%2Fjogging.webp?alt=media&token=789e584a-4f11-4897-bd5d-a59cacaac3d8", "running");
             }
 
             @Override
@@ -162,7 +163,7 @@ public class SpecifyDetails extends AppCompatActivity implements LocationListene
         Button button = findViewById(R.id.details_nextButton);
         button.setOnClickListener(view -> {
 
-            if(currentMarker == null){
+            if (currentMarker == null) {
                 chosenLatitude = latitude;
                 chosenLongitude = longitude;
             }
@@ -260,10 +261,10 @@ public class SpecifyDetails extends AppCompatActivity implements LocationListene
     }
 
 
-    private class OverlayClickListener extends Overlay{
+    private class OverlayClickListener extends Overlay {
         @Override
-        public boolean onSingleTapConfirmed(MotionEvent e, MapView mapView){
-            if(currentMarker!= null){
+        public boolean onSingleTapConfirmed(MotionEvent e, MapView mapView) {
+            if (currentMarker != null) {
                 mapView.getOverlays().remove(currentMarker);
             }
             int x = (int) e.getX();
@@ -289,7 +290,7 @@ public class SpecifyDetails extends AppCompatActivity implements LocationListene
         }
     }
 
-    private void setupMap(){
+    private void setupMap() {
         map = findViewById(R.id.details_map);
         map.setTileSource(TileSourceFactory.DEFAULT_TILE_SOURCE);
         map.setMultiTouchControls(true);
@@ -300,7 +301,7 @@ public class SpecifyDetails extends AppCompatActivity implements LocationListene
                 Manifest.permission.ACCESS_COARSE_LOCATION,
                 Manifest.permission.WRITE_EXTERNAL_STORAGE};
         requestPermissionsIfNecessary(permissions);
-        MyLocationNewOverlay mylocation = new MyLocationNewOverlay(new GpsMyLocationProvider(getApplicationContext()),map);
+        MyLocationNewOverlay mylocation = new MyLocationNewOverlay(new GpsMyLocationProvider(getApplicationContext()), map);
         mylocation.enableMyLocation();
         map.getOverlays().add(mylocation);
         OverlayClickListener MarkerclickListener = new OverlayClickListener();

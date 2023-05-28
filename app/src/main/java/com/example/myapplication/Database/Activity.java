@@ -14,11 +14,12 @@ public class Activity {
     private double distance;
     private long daysTo;
     private String pictureUrl;
+    private String subcategory;
 
     public Activity() {
     }
 
-    public Activity(String activity, String name, int age, String userId, String text, int thumbnail, String date, double latitude, double longitude, String sex, String pictureUrl) {
+    public Activity(String activity, String name, int age, String userId, String text, int thumbnail, String date, double latitude, double longitude, String sex, String pictureUrl, String subcategory) {
         this.activity = activity;
         this.name = name;
         this.age = age;
@@ -30,6 +31,7 @@ public class Activity {
         this.longitude = longitude;
         this.sex = sex;
         this.pictureUrl = pictureUrl;
+        this.subcategory = subcategory;
     }
 
     public long getDaysTo() {
@@ -138,5 +140,13 @@ public class Activity {
 
     public void setPictureUrl(String pictureUrl) {
         this.pictureUrl = pictureUrl;
+    }
+
+    public String getSubcategory() {
+        return subcategory;
+    }
+
+    public void setSubcategory(String subcategory) {
+        this.subcategory = subcategory;
     }
 }
