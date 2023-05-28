@@ -16,6 +16,10 @@ public class DAOActivity {
         databaseReference = database.getReference(Activity.class.getSimpleName());
     }
 
+    public Query getAll() {
+        return databaseReference;
+    }
+
     public Query getForUserId(String userId) {
         return databaseReference.orderByChild("userId").equalTo(userId);
     }
