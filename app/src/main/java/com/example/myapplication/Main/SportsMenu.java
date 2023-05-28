@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.widget.ImageButton;
 
 import com.example.myapplication.Database.Activity;
+import com.example.myapplication.Database.ActivitySubcategory;
 import com.example.myapplication.R;
 
 public class SportsMenu extends AppCompatActivity {
@@ -39,10 +40,10 @@ public class SportsMenu extends AppCompatActivity {
         }
     }
 
-    public void launchSpecifyDetailsActivity(Activity activity) {
+    public void launchSpecifyDetailsActivity(ActivitySubcategory subcategory) {
         Intent activitiesActivityIntent = new Intent(this, SpecifyDetails.class);
 
-        activitiesActivityIntent.putExtra("activity", activity.getActivity());
+        activitiesActivityIntent.putExtra("activity", subcategory.getName());
 
         startActivity(activitiesActivityIntent);
     }
