@@ -49,7 +49,7 @@ public class Activity_Details extends AppCompatActivity {
         //distance.setText(String.valueOf(distanceDouble));
         //daysTo.setText("String.valueOf(daysToLong)");
 
-        Button openChatButton = findViewById(R.id.openChatButton);
+        Button openChatButton = findViewById(R.id.letsTry);
         openChatButton.setOnClickListener(view -> {
             Intent chatIntent = new Intent(getApplicationContext(), ChatActivity.class);
             chatIntent.putExtra("roomId", nameString + ageString + Description + image);

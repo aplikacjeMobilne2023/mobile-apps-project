@@ -63,18 +63,13 @@
                 android:text="Description"/>
 
             <Button
-                android:backgroundTint="#228B22"
-                android:layout_marginTop="10dp"
+                android:id="@+id/letsTry"
                 android:layout_width="253dp"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:backgroundTint="#228B22"
                 android:text="Let's try!"
                 android:textSize="20sp" />
-
-            <Button
-                android:id="@+id/openChatButton"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Open chat" />
 
 
         </LinearLayout>

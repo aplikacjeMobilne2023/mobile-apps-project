@@ -136,7 +136,7 @@ public class SpecifyDetails extends AppCompatActivity implements LocationListene
                 }
 
                 String dateString = b.get(Calendar.DAY_OF_MONTH) + "-" + b.get(Calendar.MONTH) + "-" + b.get(Calendar.YEAR);
-                newActivity = new Activity(activity, user.getName(), diff, FirebaseAuth.getInstance().getCurrentUser().getUid(), text.getText().toString(), user.getImage(), dateString, latitude, longitude, user.getSex(), "https://firebasestorage.googleapis.com/v0/b/activity-1f1ae.appspot.com/o/Activities%2Fjogging.webp?alt=media&token=789e584a-4f11-4897-bd5d-a59cacaac3d8", "running");
+                newActivity = new Activity(activity, user.getName(), diff, FirebaseAuth.getInstance().getCurrentUser().getUid(), text.getText().toString(), user.getImage(), dateString, latitude, longitude, user.getSex(), "https://firebasestorage.googleapis.com/v0/b/activity-1f1ae.appspot.com/o/Activities%2Fjogging.webp?alt=media&token=789e584a-4f11-4897-bd5d-a59cacaac3d8", activity);
             }
 
             @Override
@@ -178,7 +178,7 @@ public class SpecifyDetails extends AppCompatActivity implements LocationListene
                 @Override
                 public void onSuccess(Void unused) {
                     Toast.makeText(getApplicationContext(), "Record is inserted", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(getApplicationContext(), Searching.class);
+                    Intent intent = new Intent(getApplicationContext(), UserActivities.class);
                     intent.putExtra("activity", activity);
                     intent.putExtra("latitude", latitude);
                     intent.putExtra("longitude", longitude);

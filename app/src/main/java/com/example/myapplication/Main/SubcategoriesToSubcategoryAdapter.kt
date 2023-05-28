@@ -4,7 +4,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.myapplication.Database.Activity
+import com.example.myapplication.Database.ActivitySubcategory
 import com.example.myapplication.Database.DAOActivityCategory
 import com.example.myapplication.R
 import com.google.firebase.database.DataSnapshot
@@ -13,25 +13,25 @@ import com.google.firebase.database.ValueEventListener
 
 class SubcategoriesToSubcategoryAdapter(
     activityCategoryKey: String,
-    private val launchSpecifyDetailsActivity: (Activity) -> Unit
+    private val launchSpecifyDetailsActivity: (ActivitySubcategory) -> Unit
 ) : RecyclerView.Adapter<ActivityView>() {
-    private var activities: List<Activity> = listOf()
+    private var subcategories: List<ActivitySubcategory> = listOf()
 
     init {
         val activitiesListener = object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 if (snapshot.value != null) {
-                    val retrievedActivities = mutableListOf<Activity>()
+                    val retrievedSubcategories = mutableListOf<ActivitySubcategory>()
 
                     for (child in snapshot.children) {
-                        val activity = child.getValue(Activity::class.java)
+                        val subcategory = child.getValue(ActivitySubcategory::class.java)
 
-                        if (activity != null) {
-                            retrievedActivities.add(activity)
+                        if (subcategory != null) {
+                            retrievedSubcategories.add(subcategory)
                         }
                     }
 
-                    activities = retrievedActivities
+                    subcategories = retrievedSubcategories
                     notifyDataSetChanged()
                 }
             }
@@ -52,12 +52,12 @@ class SubcategoriesToSubcategoryAdapter(
     }
 
     override fun onBindViewHolder(holder: ActivityView, position: Int) {
-        holder.bindActivity(activities[position]) {
-            launchSpecifyDetailsActivity(activities[position])
+        holder.bindActivity(subcategories[position]) {
+            launchSpecifyDetailsActivity(subcategories[position])
         }
     }
 
     override fun getItemCount(): Int {
-        return activities.size
+        return subcategories.size
     }
 }
