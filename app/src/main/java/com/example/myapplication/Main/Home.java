@@ -54,6 +54,8 @@ public class Home extends AppCompatActivity {
             launchSportsMenuActivity(activityCategoryKey);
             return null;
         }));
+
+        profileImageView.setOnClickListener((view) -> launchUserActivitiesActivity());
     }
 
     public void launchSportsMenuActivity(String activityCategoryKey) {
@@ -62,5 +64,11 @@ public class Home extends AppCompatActivity {
         sportsMenuIntent.putExtra("activityCategoryKey", activityCategoryKey);
 
         startActivity(sportsMenuIntent);
+    }
+
+    public void launchUserActivitiesActivity() {
+        Intent userActivitiesIntent = new Intent(this, UserActivities.class);
+
+        startActivity(userActivitiesIntent);
     }
 }
