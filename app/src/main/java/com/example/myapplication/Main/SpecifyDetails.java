@@ -178,7 +178,7 @@ public class SpecifyDetails extends AppCompatActivity implements LocationListene
                 @Override
                 public void onSuccess(Void unused) {
                     Toast.makeText(getApplicationContext(), "Record is inserted", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(getApplicationContext(), Searching.class);
+                    Intent intent = new Intent(getApplicationContext(), UserActivities.class);
                     intent.putExtra("activity", activity);
                     intent.putExtra("latitude", latitude);
                     intent.putExtra("longitude", longitude);
