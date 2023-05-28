@@ -11,7 +11,7 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ValueEventListener
 
-class ActivitiesToActivityAdapter(
+class SubcategoriesToSubcategoryAdapter(
     activityCategoryKey: String,
     private val launchSpecifyDetailsActivity: (Activity) -> Unit
 ) : RecyclerView.Adapter<ActivityView>() {
@@ -41,7 +41,7 @@ class ActivitiesToActivityAdapter(
             }
         }
 
-        DAOActivityCategory().getActivitiesForCategory(activityCategoryKey)
+        DAOActivityCategory().getSubcategoriesForCategory(activityCategoryKey)
             .addValueEventListener(activitiesListener)
     }
 

@@ -2,17 +2,14 @@ package com.example.myapplication.Database
 
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.Query
 
-class DAOActivityCategory {
+class DAOActivitySubcategory {
     private val database: DatabaseReference =
         FirebaseDatabase.getInstance("https://activity-1f1ae-default-rtdb.europe-west1.firebasedatabase.app")
-            .getReference(ActivityCategory::class.java.simpleName)
+            .getReference(Activity::class.java.simpleName)
 
-    fun getAll(): DatabaseReference {
-        return database
-    }
-
-    fun getSubcategoriesForCategory(key: String): DatabaseReference {
-        return database.child(key).child("subcategories")
+    fun getActivitiesForSubcategory(subcategory: String): Query {
+        return database.orderByChild("subcategory").equalTo(subcategory)
     }
 }

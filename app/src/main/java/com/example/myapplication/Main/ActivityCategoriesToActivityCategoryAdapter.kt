@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.Database.Activity
 import com.example.myapplication.Database.ActivityCategory
+import com.example.myapplication.Database.ActivitySubcategory
 import com.example.myapplication.Database.DAOActivityCategory
 import com.example.myapplication.R
 import com.google.firebase.database.DataSnapshot
@@ -30,13 +31,13 @@ class ActivityCategoriesToActivityCategoryAdapter(private val launchActivitiesAc
                         val pictureUrl =
                             activityCategoryChild.child("pictureUrl").getValue(String::class.java)
 
-                        val retrievedActivities = mutableListOf<Activity>()
+                        val retrievedSubcategories = mutableListOf<ActivitySubcategory>()
 
-                        for (activityChild in activityCategoryChild.child("activities").children) {
-                            val activity = activityChild.getValue(Activity::class.java)
+                        for (activityChild in activityCategoryChild.child("subcategories").children) {
+                            val activity = activityChild.getValue(ActivitySubcategory::class.java)
 
                             if (activity != null) {
-                                retrievedActivities.add(activity)
+                                retrievedSubcategories.add(activity)
                             }
                         }
 
@@ -47,7 +48,7 @@ class ActivityCategoriesToActivityCategoryAdapter(private val launchActivitiesAc
                                 ActivityCategory(
                                     name,
                                     pictureUrl,
-                                    retrievedActivities
+                                    retrievedSubcategories
                                 )
                             )
                             retrievedActivityCategoryKeys.add(activityCategoryKey)
